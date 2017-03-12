@@ -1,0 +1,249 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed and saved.
+ *
+ * Add your own CSS or Less to fully customize Atom.
+ * If you are unfamiliar with Less, you can read more about it here:
+ * http://lesscss.org
+ */
+
+// style the background color of the tree view
+.tree-view {
+  // background-color: whitesmoke;
+}
+
+
+@mainColor: #F3F3F3;
+
+@palerGreen: #d3ebb7;
+@paleGreen: #c7e99f;
+@lighterGreen: #c7f297;
+@lightGreen: #b2ea53;
+@mainGreen: #afeb6b;
+@strongerGreen: #93eb2d;
+@greenBlue: #5bcdbc;
+@greenYellow: #ddf787;
+@mainYellow: #ecffae;
+@mainOrange: #ffb042;
+@mainRed: #ff4444;
+@mainPink: #d5aaf8;
+@mainPurple: #9575e6;
+@shadeGrey: #91a5ca;
+@lightGrey: #ddd;
+@greyBlue: #87a2ee;
+
+
+atom-text-editor {
+  background-color: hsla(220,14%,16%,0.99);
+}
+.tree-view{
+  background-color: hsl(220,10%,16%);
+}
+
+atom-text-editor.editor .cursor {
+   border-color: @mainRed;
+}
+
+.indent-guide-improved {
+  background-color: #333348;
+  &.indent-guide-stack {
+    background-color: #333348;
+    &.indent-guide-active {
+      background-color: #44445f;
+    }
+  }
+}
+atom-text-editor.editor {
+  .syntax--source, .syntax--variable, .syntax--html, .syntax--text.syntax--plain, .syntax--text.syntax--generic-config {
+    color:@mainColor;
+  }
+  .syntax--comment {
+    color: @shadeGrey;
+    .syntax--todo {
+      color: @mainPurple;
+    }
+  }
+  .syntax--keyword {
+    color: @mainGreen;
+    &.syntax--operator {
+      color: @strongerGreen !important;
+    }
+  }
+  .syntax--self {
+    color: @paleGreen;
+  }
+  .syntax--constant {
+    color: @lighterGreen;
+    &.syntax--numeric {
+      color: @palerGreen;
+    }
+  }
+  .syntax--storage {
+    color: @mainYellow;
+    &.syntax--string {
+      color: @lightGreen;
+    }
+  }
+  .syntax--support {
+    color: @greenBlue;
+  }
+  .syntax--string {
+    color: @greyBlue;
+    .syntax--keyword, .syntax--id, .syntax--support {
+      color:#b3c7ff !important;
+    }
+    .syntax--constant {
+      color:#95ace9;
+    }
+    .syntax--function {
+      color:#759aff;
+    }
+  }
+  .syntax--variable.syntax--parameter {
+    color: #b8dfff !important;
+  }
+  .syntax--meta.syntax--class {
+    color: #8ebbcc;
+  }
+  .syntax--entity {
+    .syntax--inherited-class {
+      color: #72c7e9;
+    }
+    &.syntax--other {
+      color: #b3b7e5;
+      &.syntax--django {
+        color: #acc392;
+      }
+      &.syntax--attribute-name {
+        color: #bed6f8;
+      }
+    }
+    &.syntax--name {
+      color: #52b1ff;
+      font-weight: bold;
+      &.syntax--type {
+        color: #3de5ff;
+      }
+      &.syntax--decorator {
+        color: @mainPink;
+      }
+      &.syntax--tag {
+        color: #70dde1;
+      }
+    }
+  }
+  .syntax--method-call, .syntax--function-call {
+    .syntax--entity.syntax--name.syntax--function, .syntax--arguments, .syntax--support {
+      color: @mainColor;
+    }
+  }
+  .syntax--tag, .syntax--between-tag-pair {
+    color: #70aee1;
+  }
+
+  // Latex
+  .syntax--text.syntax--latex{
+    color: @mainColor;
+    .syntax--math{
+      color: #C5D1DC;
+      &.syntax--string .syntax--function, .syntax--braces.syntax--begin, &.syntax--string .syntax--constant, &.syntax--string .syntax--keyword{
+        color: #C5D1DC !important;
+      }
+      .syntax--string.syntax--begin,.syntax--string.syntax--end{
+        color: #A0B8CF;
+      }
+    }
+  }
+
+  // Java
+  .syntax--java{
+    .syntax--storage.syntax--type{
+      color: @lighterGreen;
+    }
+    .syntax--storage.syntax--modifier{
+      color: @greenYellow;
+    }
+    .syntax--meta.syntax--definition.syntax--variable{
+      color: @mainColor;
+    }
+    .syntax--method{
+      color: @mainColor;
+    }
+    .syntax--method-call,.syntax--definition{
+      color: @mainColor;
+      .syntax--bracket{
+        color: @lightGrey;
+      }
+      .syntax--inherited-class,.syntax--interfaces{
+        color: @lighterGreen;
+      }
+    }
+    .syntax--string{
+      color: @greyBlue;
+    }
+    .syntax--comment{
+      color: @shadeGrey;
+    }
+  }
+}
+
+// Status bar
+// file path right to left
+.status-bar-left{
+  display: flex;
+  .file-info{
+    display: flex;
+    .current-path {
+      direction: rtl;
+      text-align: left;
+      width: 100%;
+      white-space:nowrap;
+      margin-left: -0.2em; // negative space to hide char
+      &:before{
+        content:'I '; // add char to prevent "/" to be flushed right
+      }
+    }
+  }
+}
+.status-bar-left {
+  padding-left: 0;
+}
+.highlight-selected-status{
+  color:@mainOrange;
+}
+.status-bar{
+  .text-error{
+    color:@mainRed;
+  }
+}
+@media screen and (max-width:800px){
+  .status-bar{
+    .encoding-status.inline-block{
+      display:none;
+    }
+    .deprecation-cop-status.text-warning{
+      max-width: 8vw;
+    }
+    .grammar-status.inline-block{
+      max-width: 8vw;
+    }
+    .line-ending-tile.inline-block{
+      display:none;
+    }
+  }
+}
+
+// Minimap Highlight
+@keyframes highlightblink {
+  from {background: @mainOrange;}
+  to {background: @mainRed; }
+}
+
+.minimap{
+  .search-result,.highlight-selected{
+    background:@mainOrange;
+    animation: highlightblink 1s infinite;
+  }
+}

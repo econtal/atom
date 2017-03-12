@@ -1,0 +1,114 @@
+"*":
+  "advanced-open-file":
+    createDirectories: true
+    helmDirSwitch: true
+  "atom-beautify":
+    general:
+      analytics: false
+  "atom-fuzzy-grep":
+    grepCommandString: "/usr/local/bin/ag -i --column"
+  "autocomplete-plus": {}
+  "autocomplete-python":
+    useKite: false
+  "color-picker":
+    preferredFormat: "HEX"
+  core:
+    disabledPackages: [
+      "metrics"
+      "latex-autocomplete"
+      "latexer"
+      "latex-friend"
+      "linter-pycodestyle"
+      "language-gfm"
+    ]
+    packagesWithKeymapsDisabled: [
+      "color-picker"
+      "git-time-machine"
+      "pdf-view"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "atom-dark-ui"
+      "one-dark-syntax"
+    ]
+  "delete-files": {}
+  editor:
+    fontFamily: "Inconsolata"
+    fontSize: 12
+    preferredLineLength: 100
+    scrollPastEnd: true
+    softWrap: true
+  "emacs-plus": {}
+  "exception-reporting":
+    userId: "627d7632-bcfa-bdd6-9a33-b028ce38e737"
+  "git-plus":
+    general:
+      enableStatusBarIcon: false
+  "incremental-search":
+    instantSearch: true
+  latex:
+    enableShellEscape: true
+  linter:
+    displayLinterInfo: false
+    displayLinterStatus: false
+    showErrorPanel: false
+    showErrorTabFile: false
+    showErrorTabProject: false
+  "linter-pep8":
+    maxLineLength: 99
+  "linter-pylint":
+    rcFile: "~/.pylintrc"
+  "markdown-preview": {}
+  minimap:
+    plugins:
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+  pigments:
+    markerType: "dot"
+  "python-autopep8":
+    formatOnSave: true
+  react:
+    enabledForAllJavascriptFiles: true
+  "spell-check": {}
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    scrollSyncType: "Vertical + Horizontal"
+    syncHorizontalScroll: true
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+    squashDirectoryNames: true
+  welcome:
+    showOnStartup: false
+".beamer.latex.tex.text":
+  editor:
+    preferredLineLength: 100
+".bibtex.text":
+  editor:
+    preferredLineLength: 100
+".django.python.source":
+  editor:
+    autoIndentOnPaste: true
+    preferredLineLength: 100
+".latex.log.text":
+  editor:
+    preferredLineLength: 100
+".latex.memoir.tex.text":
+  editor:
+    preferredLineLength: 100
+".latex.tex.text":
+  editor:
+    preferredLineLength: 100
+".plain.text":
+  editor:
+    preferredLineLength: 100
+".tex.text":
+  editor:
+    preferredLineLength: 100
