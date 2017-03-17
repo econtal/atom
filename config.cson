@@ -20,6 +20,7 @@
       "latex-friend"
       "linter-pycodestyle"
       "language-gfm"
+      "linter-javac"
     ]
     packagesWithKeymapsDisabled: [
       "color-picker"
@@ -58,6 +59,10 @@
     maxLineLength: 99
   "linter-pylint":
     rcFile: "~/.pylintrc"
+  "linter-ui-default":
+    decorateOnTreeView: "None"
+    showStatusBar: false
+    tooltipFollows: "Keyboard"
   "markdown-preview": {}
   minimap:
     plugins:

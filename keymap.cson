@@ -41,6 +41,7 @@
 
 'atom-workspace atom-text-editor:not([mini])':
   'alt-enter': 'highlight-selected:select-all'
+  'ctrl-u space': 'cursor-history:prev-within-editor'
 
 'atom-text-editor:not([mini])':
   'tab': 'dot-atom:indent-and-go-to-first-word'

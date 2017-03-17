@@ -210,12 +210,24 @@ atom-text-editor.editor {
 .status-bar-left {
   padding-left: 0;
 }
-.highlight-selected-status{
-  color:@mainOrange;
-}
 .status-bar{
+  .highlight-selected-status{
+    color:@mainOrange;
+  }
   .text-error{
-    color:@mainRed;
+    color:fadeout(@mainRed, 50%);
+  }
+  a, .cursor-position a, .git-branch{
+    color:fadeout(@shadeGrey, 40%);
+  }
+  .text-warning, .status-modified{
+    color:fadeout(@mainOrange, 40%);
+  }
+  .text-info{
+    color:fadeout(@greenBlue, 40%);
+  }
+  .status-added{
+    color:fadeout(@mainGreen, 40%);
   }
 }
 @media screen and (max-width:800px){
@@ -246,4 +258,63 @@ atom-text-editor.editor {
     background:@mainOrange;
     animation: highlightblink 1s infinite;
   }
+}
+
+// Tree view
+.tree-view{
+  .list-item{
+    color: fadeout(@lightGrey, 50%) !important;
+  }
+  .status-modified > .list-item .icon::before,
+  .status-modified.list-item .icon::before{
+    color: fadeout(@mainYellow, 40%) !important;
+  }
+  .status-added > .list-item .icon::before,
+  .status-added.list-item .icon::before{
+    color: fadeout(@strongerGreen, 40%) !important;
+  }
+  .directory.collapsed.list-nested-item > .list-item{
+    &::before{
+      font-family: 'FontAwesome';
+      content: "\f105";
+    }
+  }
+  .directory.expanded.list-nested-item > .list-item{
+    &::before{
+      font-family: 'FontAwesome';
+      content: "\f107";
+    } & .icon::before{
+      font-family: 'FontAwesome';
+      content: '\f07c';
+    }
+  }
+}
+
+// Icons
+.icon-file-directory::before{
+  font-family: 'FontAwesome';
+  content: '\f07b';
+}
+.icon-file-text::before{
+  font-family: 'FontAwesome';
+  content:'\f016';
+}
+.icon-package::before{
+  font-family: 'FontAwsome';
+  content: '\f096';
+}
+.icon-alert::before{
+  font-family: 'FontAwesome';
+  content: '\25B3';
+}
+.icon-color-mode::before{
+  font-family: 'FontAwesome';
+  content: '\f10c';
+}
+.icon-diff-modified::before{
+  font-family: 'FontAwesome';
+  content: '\f196';
+}
+.loading-spinner-tiny{
+  background-image: url(https://www.bensherman.co.uk/img/skin/loading.gif);
 }
